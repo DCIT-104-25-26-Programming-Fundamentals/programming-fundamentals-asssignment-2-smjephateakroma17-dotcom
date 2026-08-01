@@ -51,3 +51,72 @@
 #include <iostream>
 using namespace std;
 
+// Function for Part A
+void printFibonacci(int n)
+{
+    if (n <= 0)
+    {
+        cout << "Error: N must be a positive integer." << endl;
+        return;
+    }
+
+    int first = 0, second = 1;
+
+    cout << "Fibonacci sequence: ";
+
+    for (int i = 1; i <= n; i++)
+    {
+        cout << first << " ";
+
+        int next = first + second;
+        first = second;
+        second = next;
+    }
+
+    cout << endl;
+}
+
+// Function for Part B
+void checkFibonacci(int num)
+{
+    if (num < 0)
+    {
+        cout << "Error: Number must be positive." << endl;
+        return;
+    }
+
+    int first = 0, second = 1;
+
+    while (first < num)
+    {
+        int next = first + second;
+        first = second;
+        second = next;
+    }
+
+    if (first == num)
+        cout << num << " is a Fibonacci number." << endl;
+    else
+        cout << num << " is NOT a Fibonacci number." << endl;
+}
+
+int main()
+{
+    int N, number;
+
+    // Part A
+    cout << "How many terms? ";
+    cin >> N;
+
+    printFibonacci(N);
+
+    cout << endl;
+
+    // Part B
+    cout << "Enter a number to check: ";
+    cin >> number;
+
+    checkFibonacci(number);
+
+    return 0;
+}
