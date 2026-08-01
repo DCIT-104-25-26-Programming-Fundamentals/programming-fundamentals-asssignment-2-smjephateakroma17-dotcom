@@ -56,6 +56,7 @@ bool isPrime(int num)
     return true;
 }
 
+
 int main()
 {
     int number;
